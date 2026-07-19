@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Server=192.168.77.9,4000;Database=NexusProEXT;User Id=sa;Password=cba!123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Modules/Cases/Entities -context ApplicationDbContext -NoOnConfiguring -Tables CorporatePaymentFinancials -DataAnnotations -Force

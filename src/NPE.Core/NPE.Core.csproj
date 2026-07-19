@@ -1,0 +1,134 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Common\Interfaces\**" />
+    <Compile Remove="Models\**" />
+    <Compile Remove="Modules\**" />
+    <EmbeddedResource Remove="Common\Interfaces\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Modules\**" />
+    <None Remove="Common\Interfaces\**" />
+    <None Remove="Models\**" />
+    <None Remove="Modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Modules\Auth\Authorization\PermissionRequirement.cs" />
+    <Compile Include="Modules\Auth\Authorization\RequiresPermissionAttribute.cs" />
+    <Compile Include="Modules\Auth\BusinessObjects\AuthBO.cs" />
+    <Compile Include="Modules\Auth\DTOs\ExternalAppDTO.cs" />
+    <Compile Include="Modules\Auth\DTOs\InternalAppDTO.cs" />
+    <Compile Include="Modules\Bootstrap\DTOs\BootstrapLookupsDTO.cs" />
+    <Compile Include="Modules\Bootstrap\DTOs\BootstrapContextDTO.cs" />
+    <Compile Include="Modules\Bootstrap\DTOs\BootstrapOperationalDTO.cs" />
+    <Compile Include="Modules\Bootstrap\DTOs\BootstrapResponseDTO.cs" />
+    <Compile Include="Modules\Bootstrap\DTOs\BootstrapSecurityDTO.cs" />
+    <Compile Include="Modules\Bootstrap\Services\IBootstrapService.cs" />
+    <Compile Include="Modules\Cases\BusinessObjects\CaseBO.cs" />
+    <Compile Include="Modules\Cases\BusinessObjects\ICaseServices.cs" />
+    <Compile Include="Modules\Cases\DTOs\AddCaseChildrenRequest.cs" />
+    <Compile Include="Modules\Cases\DTOs\GetNextCaseNumberRequest.cs" />
+    <Compile Include="Modules\Cases\DTOs\UpdatePatientCaseInfoRequest.cs" />
+    <Compile Include="Modules\Cases\DTOs\CaseDTO.cs" />
+    <Compile Include="Modules\Cases\DTOs\CaseDiscountRequest.cs" />
+    <Compile Include="Modules\Cases\DTOs\CasePaymentRuleRequest.cs" />
+    <Compile Include="Modules\Cases\DTOs\CasePricingRequest.cs" />
+    <Compile Include="Modules\Cases\DTOs\CaseReferenceBehaviour.cs" />
+    <Compile Include="Modules\Cases\DTOs\CaseSearchParamsDTO.cs" />
+    <Compile Include="Modules\Cases\DTOs\CaseCoverageRequest.cs" />
+    <Compile Include="Modules\Cases\DTOs\PatientCaseCreateDTO.cs" />
+    <Compile Include="Modules\Cases\DTOs\SaveCaseResult.cs" />
+    <Compile Include="Modules\iLock\DTOs\MenuConfiguration.cs" />
+    <Compile Include="Modules\iLock\BusinessObjects\IIlockService.cs" />
+    <Compile Include="Modules\iLock\BusinessObjects\IEncryptDecryptService.cs" />
+    <Compile Include="Modules\iLock\DTOs\IlockUser.cs" />
+    <Compile Include="Modules\Lookups\DTOs\LookupContextDTO.cs" />
+    <Compile Include="Modules\Lookups\Services\ILookupPolicyService.cs" />
+    <Compile Include="Modules\Lookups\Services\ILookupResolverService.cs" />
+    <Compile Include="Modules\Management\Centers\Services\ICenterHierarchyService.cs" />
+    <Compile Include="Modules\Management\Centers\Validation\CenterValidator.cs" />
+    <Compile Include="Modules\Management\Consultants\Validation\ConsultantValidator.cs" />
+    <Compile Include="Modules\Management\References\Validation\ReferenceValidator.cs" />
+    <Compile Include="Modules\Management\Shared\BusinessObjects\IKeyValueService.cs" />
+    <Compile Include="Modules\Management\Shared\DTOs\CityDTO.cs" />
+    <Compile Include="Modules\Management\Shared\DTOs\CountryDTO.cs" />
+    <Compile Include="Modules\Management\Shared\DTOs\KeyValueDTOs.cs" />
+    <Compile Include="Modules\Management\Shared\DTOs\PatientTitleDTO.cs" />
+    <Compile Include="Modules\Management\Shared\Services\ICityService.cs" />
+    <Compile Include="Modules\Management\Shared\Services\ICountryService.cs" />
+    <Compile Include="Modules\Management\Shared\Services\IPatientTitleService.cs" />
+    <Compile Include="Modules\Management\Shared\Validation\CityValidator.cs" />
+    <Compile Include="Modules\Management\Shared\Validation\CountryValidator.cs" />
+    <Compile Include="Modules\Management\Shared\Validation\PatientTitleValidator.cs" />
+    <Compile Include="Modules\Patients\DTOs\SearchPatientListDTO.cs" />
+    <Compile Include="Modules\Cases\Validators\CaseValidator.cs" />
+    <Compile Include="Modules\iLock\BusinessObjects\IMenuService.cs" />
+    <Compile Include="Modules\Laboratory\BatchProcessing\BusinessObjects\BatchProcessingBO.cs" />
+    <Compile Include="Modules\Laboratory\BatchProcessing\DTOs\BatchProcessingMappedResponse.cs" />
+    <Compile Include="Modules\Laboratory\BatchProcessing\DTOs\BatchProcessingSearchRequest.cs" />
+    <Compile Include="Modules\Laboratory\BatchProcessing\DTOs\BatchProcessingTestDto.cs" />
+    <Compile Include="Modules\Laboratory\BatchProcessing\Validators\BatchProcessingValidator.cs" />
+    <Compile Include="Modules\Laboratory\SampleProcessing\BusinessObjects\SampleProcessingBO.cs" />
+    <Compile Include="Modules\Laboratory\SampleProcessing\DTOs\SampleProcessingMappedResponse.cs" />
+    <Compile Include="Modules\Laboratory\SampleProcessing\DTOs\SampleProcessingSearchRequest.cs" />
+    <Compile Include="Modules\Laboratory\SampleProcessing\DTOs\SampleProcessingTestDto.cs" />
+    <Compile Include="Modules\Laboratory\SampleProcessing\Validators\SampleProcessingValidator.cs" />
+    <Compile Include="Modules\Laboratory\TestHistory\BusinessObjects\TestHistoryBO.cs" />
+    <Compile Include="Modules\Laboratory\TestHistory\DTOs\TestHistoryCaseDto.cs" />
+    <Compile Include="Modules\Laboratory\TestHistory\DTOs\TestHistoryRawResponse.cs" />
+    <Compile Include="Modules\Laboratory\TestHistory\DTOs\TestHistorySearchRequest.cs" />
+    <Compile Include="Modules\Laboratory\TestHistory\DTOs\TestHistoryTestDto.cs" />
+    <Compile Include="Modules\Laboratory\TestHistory\Validators\TestHistoryValidator.cs" />
+    <Compile Include="Modules\Management\Centers\Services\ICenterService.cs" />
+    <Compile Include="Modules\Management\Consultants\BusinessObjects\IConsultantService.cs" />
+    <Compile Include="Modules\Management\References\BusinessObjects\IReferenceService.cs" />
+    <Compile Include="Modules\Management\Centers\DTOs\CenterDTO.cs" />
+    <Compile Include="Modules\Management\Centers\DTOs\CenterLookupBundleDTO.cs" />
+    <Compile Include="Modules\Management\Consultants\DTOs\ConsultantDTO.cs" />
+    <Compile Include="Modules\Management\Consultants\DTOs\ConsultantLookupDTO.cs" />
+    <Compile Include="Modules\Management\References\DTOs\ReferenceDTO.cs" />
+    <Compile Include="Modules\Management\References\DTOs\ReferenceLookupDTO.cs" />
+    <Compile Include="Modules\Patients\BusinessObjects\PatientBO.cs" />
+    <Compile Include="Modules\Patients\DTOs\PatientDTO.cs" />
+    <Compile Include="Modules\Patients\DTOs\PatientSearchRequest.cs" />
+    <Compile Include="Modules\Laboratory\ResultEntry\BusinessObjects\ResultEntryBO.cs" />
+    <Compile Include="Modules\Laboratory\ResultEntry\DTOs\ResultEntryMappedResponse.cs" />
+    <Compile Include="Modules\Laboratory\ResultEntry\DTOs\ResultEntryPatientDto.cs" />
+    <Compile Include="Modules\Laboratory\ResultEntry\DTOs\ResultEntrySearchRequest.cs" />
+    <Compile Include="Modules\Laboratory\ResultEntry\Validators\ResultEntryValidator.cs" />
+    <Compile Include="Modules\Patients\Views\PatientListView.cs" />
+    <Compile Include="Modules\Signup\BusinessObjects\SignupBO.cs" />
+    <Compile Include="Modules\Signup\DTOs\CompanySignupRequest.cs" />
+    <Compile Include="Modules\Signup\DTOs\SignupResponseDTO.cs" />
+    <Compile Include="Modules\Signup\BusinessObjects\ITenantProvisioningService.cs" />
+    <Compile Include="Modules\Signup\Validators\SignupValidator.cs" />
+    <Compile Include="Modules\Patients\Validators\PatientValidator.cs" />
+    <Compile Include="Modules\Tests\BusinessObjects\ITestManagement.cs" />
+    <Compile Include="Modules\Tests\BusinessObjects\ITestRateLookupService.cs" />
+    <Compile Include="Modules\Tests\BusinessObjects\TestBO.cs" />
+    <Compile Include="Modules\Tests\BusinessObjects\TestManagementBO.cs" />
+    <Compile Include="Modules\Tests\DTOs\TestDTO.cs" />
+    <Compile Include="Modules\Tests\DTOs\TestRateLookupDTO.cs" />
+    <Compile Include="Modules\Tests\DTOs\TestStructureDTO.cs" />
+    <Compile Include="Modules\Users\BusinessObjects\UserBO.cs" />
+    <Compile Include="Modules\Users\BusinessObjects\IUserService.cs" />
+    <Compile Include="Modules\Users\BusinessObjects\IUserSettingsService.cs" />
+    <Compile Include="Modules\Users\DTOs\CreateAdminUserRequest.cs" />
+    <Compile Include="Modules\Users\DTOs\UserSettingsDTO.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="8.0.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Modules\Management\Centers\BusinessObjects\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,270 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Modules\**" />
+    <EmbeddedResource Remove="Modules\**" />
+    <None Remove="Modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <Compile Include="Modules\Auth\Authorization\PermissionPolicyProvider.cs" />
+    <Compile Include="Modules\Auth\Authorization\PermissionAuthorizationHandler.cs" />
+    <Compile Include="Modules\Auth\Services\ExternalAppService.cs" />
+    <Compile Include="Modules\Auth\Services\InternalUserService.cs" />
+    <Compile Include="Modules\Auth\Services\JwtService.cs" />
+    <Compile Include="Modules\Auth\Configurations\ExternalAppConfiguration.cs" />
+    <Compile Include="Modules\Auth\Configurations\ExternalAppsPermissionsConfiguration.cs" />
+    <Compile Include="Modules\Auth\Entities\ExternalApp.cs" />
+    <Compile Include="Modules\Auth\Entities\ExternalAppPermission.cs" />
+    <Compile Include="Modules\Bootstrap\Services\BootstrapService.cs" />
+    <Compile Include="Modules\Cases\Configurations\CaseAdditionalSettingConfiguration.cs" />
+    <Compile Include="Modules\Cases\Configurations\CorporatePaymentFinancialConfiguration.cs" />
+    <Compile Include="Modules\Cases\Entities\CaseAdditionalSetting.cs" />
+    <Compile Include="Modules\Cases\Entities\CaseClinicalDetail.cs" />
+    <Compile Include="Modules\Cases\Entities\CaseDetailInstrument.cs" />
+    <Compile Include="Modules\Cases\Entities\CaseInfo.cs" />
+    <Compile Include="Modules\Cases\Entities\CasePaymentOnline.cs" />
+    <Compile Include="Modules\Cases\Entities\CaseRemark.cs" />
+    <Compile Include="Modules\Cases\Entities\CorporatePaymentFinancial.cs" />
+    <Compile Include="Modules\Cases\Entities\OutsourceCaseDetail.cs" />
+    <Compile Include="Modules\Cases\Mapping\CaseMapper.cs" />
+    <Compile Include="Modules\Cases\Services\CaseDiscountService.cs" />
+    <Compile Include="Modules\Cases\Services\CaseNumberService.cs" />
+    <Compile Include="Modules\Cases\Services\CasePricingService.cs" />
+    <Compile Include="Modules\Cases\Services\CaseReferenceBehaviourService.cs" />
+    <Compile Include="Modules\Cases\Services\CaseService.cs" />
+    <Compile Include="Modules\Cases\Configurations\CaseConfiguration.cs" />
+    <Compile Include="Modules\Cases\Configurations\CaseDetailConfiguration.cs" />
+    <Compile Include="Modules\Cases\Configurations\CasePaymentConfiguration.cs" />
+    <Compile Include="Modules\Cases\Configurations\CaseSettingConfiguration.cs" />
+    <Compile Include="Modules\Cases\Entities\ApplicationDbContext.cs" />
+    <Compile Include="Modules\Cases\Entities\Case.cs" />
+    <Compile Include="Modules\Cases\Entities\CaseDetail.cs" />
+    <Compile Include="Modules\Cases\Entities\CasePayment.cs" />
+    <Compile Include="Modules\Cases\Entities\CaseSetting.cs" />
+    <Compile Include="Modules\Cases\Services\CaseCoverageService.cs" />
+    <Compile Include="Modules\iLock\Builders\MenuBuilder.cs" />
+    <Compile Include="Modules\iLock\Builders\MenuStructure.cs" />
+    <Compile Include="Modules\iLock\Configurations\ILockApplicationConfiguration.cs" />
+    <Compile Include="Modules\iLock\Configurations\ILockCompanyConfiguration.cs" />
+    <Compile Include="Modules\iLock\Configurations\ILockGlobalDefConfiguration.cs" />
+    <Compile Include="Modules\iLock\Configurations\ILockGroupConfiguration.cs" />
+    <Compile Include="Modules\iLock\Configurations\ILockGroupUIObjectConfiguration.cs" />
+    <Compile Include="Modules\iLock\Configurations\ILockGroupUserConfiguration.cs" />
+    <Compile Include="Modules\iLock\Configurations\ILockIdentityConfiguration.cs" />
+    <Compile Include="Modules\iLock\Configurations\ILockLocationConfiguration.cs" />
+    <Compile Include="Modules\iLock\Configurations\ILockUIContainerConfiguration.cs" />
+    <Compile Include="Modules\iLock\Configurations\ILockUIObjectConfiguration.cs" />
+    <Compile Include="Modules\iLock\Configurations\ILockUserAuditConfiguration.cs" />
+    <Compile Include="Modules\Management\Shared\Configurations\PatientTitleConfiguration.cs" />
+    <Compile Include="Modules\Management\Shared\Entities\PatientTitle.cs" />
+    <Compile Include="Modules\Management\Shared\Mapping\CityMapper.cs" />
+    <Compile Include="Modules\Management\Shared\Mapping\CountryMapper.cs" />
+    <Compile Include="Modules\Management\Shared\Mapping\PatientTitleMapper.cs" />
+    <Compile Include="Modules\Management\Shared\Services\CityService.cs" />
+    <Compile Include="Modules\Management\Shared\Services\CountryService.cs" />
+    <Compile Include="Modules\Management\Shared\Services\PatientTitleService.cs" />
+    <Compile Include="Modules\Tenancy\Configurations\CompanyCaseConfiguration.cs" />
+    <Compile Include="Modules\Tenancy\Configurations\CompanyPatientConfiguration.cs" />
+    <Compile Include="Modules\Tenancy\Configurations\CompanyTestConfiguration.cs" />
+    <Compile Include="Modules\Tenancy\Entities\CompanyCase.cs" />
+    <Compile Include="Modules\Tenancy\Entities\CompanyPatient.cs" />
+    <Compile Include="Modules\Tenancy\Entities\CompanyTest.cs" />
+    <Compile Include="Modules\Tenancy\Services\TenantProvisioningService.cs" />
+    <Compile Include="Modules\Users\Configurations\ILockUserConfiguration.cs" />
+    <Compile Include="Modules\Users\Configurations\ILockUserHistoryConfiguration.cs" />
+    <Compile Include="Modules\Users\Configurations\ILockUserLocationConfiguration.cs" />
+    <Compile Include="Modules\iLock\Configurations\ILockWebConfiguration.cs" />
+    <Compile Include="Modules\iLock\Entities\ApplicationDbContext.cs" />
+    <Compile Include="Modules\iLock\Entities\ILockApplication.cs" />
+    <Compile Include="Modules\iLock\Entities\ILockCompany.cs" />
+    <Compile Include="Modules\iLock\Entities\ILockGlobalDef.cs" />
+    <Compile Include="Modules\iLock\Entities\ILockGroup.cs" />
+    <Compile Include="Modules\iLock\Entities\ILockGroupUIObject.cs" />
+    <Compile Include="Modules\iLock\Entities\ILockGroupUser.cs" />
+    <Compile Include="Modules\iLock\Entities\ILockIdentity.cs" />
+    <Compile Include="Modules\iLock\Entities\ILockLocation.cs" />
+    <Compile Include="Modules\iLock\Entities\ILockUIContainer.cs" />
+    <Compile Include="Modules\iLock\Entities\ILockUIObject.cs" />
+    <Compile Include="Modules\Users\Entities\ILockUser.cs" />
+    <Compile Include="Modules\iLock\Entities\ILockUserAudit.cs" />
+    <Compile Include="Modules\Users\Entities\ILockUserHistory.cs" />
+    <Compile Include="Modules\Users\Entities\ILockUserLocation.cs" />
+    <Compile Include="Modules\iLock\Entities\ILockWeb.cs" />
+    <Compile Include="Modules\iLock\Mapping\MenuMapper.cs" />
+    <Compile Include="Modules\iLock\Models\MenuFlatItem.cs" />
+    <Compile Include="Modules\iLock\Services\EncryptDecryptService.cs" />
+    <Compile Include="Modules\iLock\Services\ILockService.cs" />
+    <Compile Include="Modules\iLock\Services\MenuService.cs" />
+    <Compile Include="Modules\Laboratory\BatchProcessing\Services\BatchProcessingService.cs" />
+    <Compile Include="Modules\Laboratory\ResultEntry\Services\ResultEntryService.cs" />
+    <Compile Include="Modules\Laboratory\SampleProcessing\Services\SampleProcessingService.cs" />
+    <Compile Include="Modules\Laboratory\TestHistory\Services\TestHistoryService.cs" />
+    <Compile Include="Modules\Lookups\Services\LookupPolicyService.cs" />
+    <Compile Include="Modules\Lookups\Services\LookupResolverService.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CenterConsultantConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CenterCreditDetailConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CenterCreditHistoryConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CenterCreditPaymentConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CenterCreditSummaryConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CenterOwnerCenterConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CenterOwnerConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CenterPaymentConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CenterReferenceConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CentersToCheckDueAmountForConfiguration.cs" />
+    <Compile Include="Modules\Tenancy\Configurations\CompanyCenterConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterAdditionalInfo.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterCreditDetail.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterCreditHistory.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterCreditPayment.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterCreditSummary.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterOwner.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterOwnerCenter.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterPayment.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterReportLayoutMapping.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CentersToCheckDueAmountFor.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\LabLocation.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\Location.cs" />
+    <Compile Include="Modules\Management\Centers\Services\CenterHierarchyService.cs" />
+    <Compile Include="Modules\Management\Consultants\Configurations\ConsultantCommsionSettingConfiguration.cs" />
+    <Compile Include="Modules\Management\Consultants\Entities\ConsultantCommsionSetting.cs" />
+    <Compile Include="Modules\Management\References\Configurations\ReferenceAgrementConfiguration.cs" />
+    <Compile Include="Modules\Management\References\Configurations\ReferencePaymentConfiguration.cs" />
+    <Compile Include="Modules\Management\References\Entities\ReferenceAgrement.cs" />
+    <Compile Include="Modules\Management\References\Entities\ReferenceBillSetting.cs" />
+    <Compile Include="Modules\Management\References\Entities\ReferencePayment.cs" />
+    <Compile Include="Modules\Management\Shared\Configurations\CityConfiguration.cs" />
+    <Compile Include="Modules\Management\Shared\Configurations\CityLocationConfiguration.cs" />
+    <Compile Include="Modules\Management\Shared\Configurations\ClinicalDetailConfiguration.cs" />
+    <Compile Include="Modules\Management\Shared\Configurations\CountryConfiguration.cs" />
+    <Compile Include="Modules\Management\Shared\Configurations\KeyValueConfiguration.cs" />
+    <Compile Include="Modules\Management\Shared\Configurations\RegionConfiguration.cs" />
+    <Compile Include="Modules\Management\Shared\Configurations\RemarkConfiguration.cs" />
+    <Compile Include="Modules\Management\Shared\Configurations\RemarkSettingConfiguration.cs" />
+    <Compile Include="Modules\Management\Shared\Entities\City.cs" />
+    <Compile Include="Modules\Management\Shared\Entities\CityLocation.cs" />
+    <Compile Include="Modules\Management\Shared\Entities\ClinicalDetail.cs" />
+    <Compile Include="Modules\Management\Shared\Entities\Country.cs" />
+    <Compile Include="Modules\Management\Shared\Entities\KeyValue.cs" />
+    <Compile Include="Modules\Management\Shared\Entities\Region.cs" />
+    <Compile Include="Modules\Management\Shared\Entities\Remark.cs" />
+    <Compile Include="Modules\Management\Shared\Entities\RemarkSetting.cs" />
+    <Compile Include="Modules\Management\Shared\Services\KeyValueService.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CenterConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CenterLabNoConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\CenterSettingConfiguration.cs" />
+    <Compile Include="Modules\Management\Consultants\Configurations\ConsultantConfiguration.cs" />
+    <Compile Include="Modules\Management\Consultants\Configurations\ConsultantSettingConfiguration.cs" />
+    <Compile Include="Modules\Management\Centers\Configurations\MaxLabNoConfiguration.cs" />
+    <Compile Include="Modules\Management\References\Configurations\ReferenceConfiguration.cs" />
+    <Compile Include="Modules\Management\References\Configurations\ReferenceSettingConfiguration.cs" />
+    <Compile Include="Modules\Management\ApplicationDbContext.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\Center.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterAdditionalData.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterConsultant.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterReference.cs" />
+    <Compile Include="Modules\Tenancy\Entities\CompanyCenter.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterLabNo.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\CenterSetting.cs" />
+    <Compile Include="Modules\Management\Consultants\Entities\Consultant.cs" />
+    <Compile Include="Modules\Management\Consultants\Entities\ConsultantSetting.cs" />
+    <Compile Include="Modules\Management\Centers\Entities\MaxLabNo.cs" />
+    <Compile Include="Modules\Management\References\Entities\Reference.cs" />
+    <Compile Include="Modules\Management\References\Entities\ReferenceSetting.cs" />
+    <Compile Include="Modules\Management\Centers\Mapping\CenterMapper.cs" />
+    <Compile Include="Modules\Management\Consultants\Mapping\ConsultantMapper.cs" />
+    <Compile Include="Modules\Management\References\Mapping\ReferenceMapper.cs" />
+    <Compile Include="Modules\Management\Centers\Services\CenterService.cs" />
+    <Compile Include="Modules\Management\Consultants\Services\ConsultantService.cs" />
+    <Compile Include="Modules\Management\References\Services\ReferenceService.cs" />
+    <Compile Include="Modules\Patients\Configurations\PatientConfiguration.cs" />
+    <Compile Include="Modules\Patients\Configurations\PatientCorporateInfoConfiguration.cs" />
+    <Compile Include="Modules\Patients\Configurations\PatientDetailConfiguration.cs" />
+    <Compile Include="Modules\Patients\Configurations\PatientSettingConfiguration.cs" />
+    <Compile Include="Modules\Patients\Entities\ApplicationDbContext.cs" />
+    <Compile Include="Modules\Patients\Entities\Patient.cs" />
+    <Compile Include="Modules\Patients\Entities\PatientCorporateInfo.cs" />
+    <Compile Include="Modules\Patients\Entities\PatientDetail.cs" />
+    <Compile Include="Modules\Patients\Entities\PatientSetting.cs" />
+    <Compile Include="Modules\Patients\Mapping\PatientMapper.cs" />
+    <Compile Include="Modules\Patients\Services\PatientNumberService.cs" />
+    <Compile Include="Modules\Patients\Services\PatientService.cs" />
+    <Compile Include="Modules\Signup\Services\SignupService.cs" />
+    <Compile Include="Modules\Tenancy\Configurations\CompanyConsultantConfiguration.cs" />
+    <Compile Include="Modules\Tenancy\Configurations\CompanyReferenceConfiguration.cs" />
+    <Compile Include="Modules\Tenancy\Entities\CompanyConsultant.cs" />
+    <Compile Include="Modules\Tenancy\Entities\CompanyReference.cs" />
+    <Compile Include="Modules\Tests\Configurations\LISSpecimenSettingConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\LISSpecimenTypeConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\TestConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\TestDepartmentConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\TestDetailConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\TestGroupConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\TestInstrumentSettingConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\TestNormalValueConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\TestNormalValueGraphConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\TestParameterConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\TestParameterNormalValueConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\TestProfileConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\TestSettingConfiguration.cs" />
+    <Compile Include="Modules\Tests\Configurations\TestTemplateConfiguration.cs" />
+    <Compile Include="Modules\Tests\Entities\ApplicationDbContext.cs" />
+    <Compile Include="Modules\Tests\Entities\LISSpecimenSetting.cs" />
+    <Compile Include="Modules\Tests\Entities\LISSpecimenType.cs" />
+    <Compile Include="Modules\Tests\Entities\Test.cs" />
+    <Compile Include="Modules\Tests\Entities\TestDepartment.cs" />
+    <Compile Include="Modules\Tests\Entities\TestDetail.cs" />
+    <Compile Include="Modules\Tests\Entities\TestGroup.cs" />
+    <Compile Include="Modules\Tests\Entities\TestInstrumentSetting.cs" />
+    <Compile Include="Modules\Tests\Entities\TestNormalValue.cs" />
+    <Compile Include="Modules\Tests\Entities\TestNormalValueGraph.cs" />
+    <Compile Include="Modules\Tests\Entities\TestParameter.cs" />
+    <Compile Include="Modules\Tests\Entities\TestParameterNormalValue.cs" />
+    <Compile Include="Modules\Tests\Entities\TestProfile.cs" />
+    <Compile Include="Modules\Tests\Entities\TestSetting.cs" />
+    <Compile Include="Modules\Tests\Entities\TestTemplate.cs" />
+    <Compile Include="Modules\Tests\Mapping\TestManaementMapper.cs" />
+    <Compile Include="Modules\Tests\Mapping\TestMapper.cs" />
+    <Compile Include="Modules\Tests\Services\TestManagementService.cs" />
+    <Compile Include="Modules\Tests\Services\TestRateLookupService.cs" />
+    <Compile Include="Modules\Tests\Services\TestService.cs" />
+    <Compile Include="Modules\Users\Configurations\UserWebSettingsConfiguration.cs" />
+    <Compile Include="Modules\Users\Configurations\WebSettingsConfiguration.cs" />
+    <Compile Include="Modules\Users\Entities\UserWebSettings.cs" />
+    <Compile Include="Modules\Users\Entities\WebSettings.cs" />
+    <Compile Include="Modules\Users\Services\UserService.cs" />
+    <Compile Include="Modules\Users\Services\UserSettingsService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.22">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.10.0" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NPE.Core\NPE.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Modules\Signup\Configurations\" />
+  </ItemGroup>
+
+</Project>
