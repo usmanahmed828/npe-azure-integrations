@@ -22,6 +22,7 @@ namespace NPE.API.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] InternalLoginRequest request)
         {
+
             var response = _authBO.AuthenticateInternal(request);
 
             if (!response.Success)
